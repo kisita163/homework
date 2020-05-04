@@ -1,0 +1,46 @@
+/usr/lib/jvm/java-8-openjdk-i386/jre/../bin/javadoc
+@options
+@packages
+-classpath
+'/home/sandra/eclipse-workspace/sudoku/target/classes:/home/sandra/eclipse-workspace/sudoku/target/test-classes:/home/sandra/.m2/repository/junit/junit-dep/4.8.2/junit-dep-4.8.2.jar:/home/sandra/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/home/sandra/eclipse-workspace/sudoku/src/test/java'
+-author
+-bottom
+'Copyright &#169; 2020. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'sudoku 0.0.1-SNAPSHOT Test API'
+-link
+'../apidocs'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' '/home/sandra/eclipse-workspace/sudoku/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'sudoku 0.0.1-SNAPSHOT Test API'
+sudoku
+/home/sandra/eclipse-workspace/sudoku/target/classes = 1588618456000
+/home/sandra/eclipse-workspace/sudoku/target/test-classes = 1588618457546
+/home/sandra/.m2/repository/junit/junit-dep/4.8.2/junit-dep-4.8.2.jar = 1588447781431
+/home/sandra/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar = 1588447781567
+/home/sandra/eclipse-workspace/sudoku/src/test/java = 1588541974968
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/deprecated-list.html = 1588618491003
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/constant-values.html = 1588618490895
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/package-list = 1588618490787
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/index-all.html = 1588618490979
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/allclasses-frame.html = 1588618491007
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/script.js = 1588618491179
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/stylesheet.css = 1588618491175
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/allclasses-noframe.html = 1588618491007
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/overview-tree.html = 1588618490959
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/index.html = 1588618491015
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/help-doc.html = 1588618491091

@@ -1,0 +1,46 @@
+/usr/lib/jvm/java-8-openjdk-i386/jre/../bin/javadoc
+@options
+@packages
+-classpath
+'/home/sandra/eclipse-workspace/couvertureCode/target/classes:/home/sandra/eclipse-workspace/couvertureCode/target/test-classes:/home/sandra/.m2/repository/junit/junit-dep/4.8.2/junit-dep-4.8.2.jar:/home/sandra/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/home/sandra/eclipse-workspace/couvertureCode/src/test/java'
+-author
+-bottom
+'Copyright &#169; 2020. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/sandra/eclipse-workspace/couvertureCode/target/site/testapidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'couverture.code 0.0.1-SNAPSHOT Test API'
+-link
+'../apidocs'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' '/home/sandra/eclipse-workspace/couvertureCode/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'couverture.code 0.0.1-SNAPSHOT Test API'
+couverture.code
+/home/sandra/eclipse-workspace/couvertureCode/target/classes = 1588618519000
+/home/sandra/eclipse-workspace/couvertureCode/target/test-classes = 1588618519509
+/home/sandra/.m2/repository/junit/junit-dep/4.8.2/junit-dep-4.8.2.jar = 1588447781431
+/home/sandra/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar = 1588447781567
+/home/sandra/eclipse-workspace/couvertureCode/src/test/java = 1588459427353
+/home/sandra/eclipse-workspace/couvertureCode/target/site/testapidocs/deprecated-list.html = 1588618554831
+/home/sandra/eclipse-workspace/couvertureCode/target/site/testapidocs/constant-values.html = 1588618554711
+/home/sandra/eclipse-workspace/couvertureCode/target/site/testapidocs/package-list = 1588618554615
+/home/sandra/eclipse-workspace/couvertureCode/target/site/testapidocs/index-all.html = 1588618554819
+/home/sandra/eclipse-workspace/couvertureCode/target/site/testapidocs/allclasses-frame.html = 1588618554835
+/home/sandra/eclipse-workspace/couvertureCode/target/site/testapidocs/script.js = 1588618554871
+/home/sandra/eclipse-workspace/couvertureCode/target/site/testapidocs/stylesheet.css = 1588618554871
+/home/sandra/eclipse-workspace/couvertureCode/target/site/testapidocs/allclasses-noframe.html = 1588618554835
+/home/sandra/eclipse-workspace/couvertureCode/target/site/testapidocs/overview-tree.html = 1588618554799
+/home/sandra/eclipse-workspace/couvertureCode/target/site/testapidocs/index.html = 1588618554839
+/home/sandra/eclipse-workspace/couvertureCode/target/site/testapidocs/help-doc.html = 1588618554855
