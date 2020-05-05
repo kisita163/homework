@@ -2,19 +2,5 @@
 <pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
-    version="6.21.0" timestamp="2020-05-04T20:54:39.418">
-<file name="/home/sandra/eclipse-workspace/sudoku/src/main/java/com/sandra/kisita/sudoku/Grille.java">
-<violation beginline="34" endline="34" begincolumn="13" endcolumn="84" rule="UnnecessaryModifier" ruleset="Code Style" package="com.sandra.kisita.sudoku" class="Grille" method="setValue" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
-Unnecessary modifier 'public' on method 'setValue': the method is declared in an interface type
-</violation>
-<violation beginline="44" endline="44" begincolumn="13" endcolumn="72" rule="UnnecessaryModifier" ruleset="Code Style" package="com.sandra.kisita.sudoku" class="Grille" method="getValue" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
-Unnecessary modifier 'public' on method 'getValue': the method is declared in an interface type
-</violation>
-<violation beginline="51" endline="51" begincolumn="13" endcolumn="31" rule="UnnecessaryModifier" ruleset="Code Style" package="com.sandra.kisita.sudoku" class="Grille" method="complete" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
-Unnecessary modifier 'public' on method 'complete': the method is declared in an interface type
-</violation>
-<violation beginline="65" endline="65" begincolumn="13" endcolumn="87" rule="UnnecessaryModifier" ruleset="Code Style" package="com.sandra.kisita.sudoku" class="Grille" method="possible" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
-Unnecessary modifier 'public' on method 'possible': the method is declared in an interface type
-</violation>
-</file>
+    version="6.21.0" timestamp="2020-05-05T16:07:17.996">
 </pmd>

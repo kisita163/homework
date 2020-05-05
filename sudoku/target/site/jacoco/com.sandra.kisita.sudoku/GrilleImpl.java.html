@@ -9,104 +9,171 @@ import java.util.List;
      */
     public static final int DIMENSION = 9;
     /**
-     * Dimension sous grille.
+     * SUBDIMENSION   Dimension sous grille.
+     * DIMENSION      dimension grille SUDOKU.
      */
     public static final int SUBDIMENSION = 3;
-    
-<span class="fc" id="L16">    char[][]valeurs_S = new char[DIMENSION][DIMENSION];</span>
+
+    /**
+     * valeurS grille Sudoku.
+     */
+<span class="fc" id="L20">    char[][]valeursS = new char[DIMENSION][DIMENSION];</span>
     /**
      * @return sudoku dimension.
      */
     public int getDimension() {
-            
-<span class="nc" id="L22">        return DIMENSION;</span>
+
+<span class="nc" id="L26">        return DIMENSION;</span>
     }
 
-    /* (non-Javadoc)
-     * @see com.sandra.kisita.sudoku.Grille#setValue(int, int, char)
+    /**
+     * Affecte une valeur dans la grille.
+     *
+     * @param x       position x dans la grille
+     * @param y       position y dans la grille
+     * @param value
+     *    valeur a mettre dans la case
+     * @throw IllegalArgumentException si x ou y sont hors bornes (0-8)
+     * @throw IllegalArgumentException si la valeur est interdite aux vues des
+     *        autres valeurs de la grille
+     * @throw IllegalArgumentException si value n'est pas un caractere autorise
+     *        ('1',...,'9')
      */
-    public void setValue(int x, int y, char value) throws IllegalArgumentException {
+    public void setValue(final int x, final int y, final char value) throws IllegalArgumentException {
         // Convert String Array to List
-<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (!isValid(value)) {</span>
-<span class="fc" id="L31">            throw new IllegalArgumentException(&quot;Unsupported val.&quot;);</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if (!isValid(value)) {</span>
+<span class="fc" id="L45">            throw new IllegalArgumentException(&quot;Unsupported val.&quot;);</span>
         }
-        
-<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (isPositionValid(x, y)) {</span>
-<span class="fc" id="L35">            throw new IllegalArgumentException(&quot;Invalid pos.&quot;);</span>
+
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        if (isPositionValid(x, y)) {</span>
+<span class="fc" id="L49">            throw new IllegalArgumentException(&quot;Invalid pos.&quot;);</span>
         }
-<span class="fc bfc" id="L37" title="All 2 branches covered.">        if (isInColumnOrRow(x, y, value)) {</span>
-<span class="fc" id="L38">            throw new IllegalArgumentException(&quot;Exists in col. or row&quot;);</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        if (isInColumnOrRow(x, y, value)) {</span>
+<span class="fc" id="L52">            throw new IllegalArgumentException(&quot;Exists in col. or row&quot;);</span>
         }
-<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (isInSubgrid(x, y, value)) {</span>
-<span class="fc" id="L41">            throw new IllegalArgumentException(&quot;Exists in subgrid&quot;);</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        if (isInSubgrid(x, y, value)) {</span>
+<span class="fc" id="L55">            throw new IllegalArgumentException(&quot;Exists in subgrid&quot;);</span>
         }
-<span class="fc" id="L43">        valeurs_S[x][y] = value;</span>
-<span class="fc" id="L44">    }</span>
+<span class="fc" id="L57">        valeursS[x][y] = value;</span>
+<span class="fc" id="L58">    }</span>
+    /**
+     * @param value valeur à vérifier
+     * cette méthode perlmet de vérifier que la valeur saisie est valide.
+     * @return
+     * Caractere possible a mettre dans la grille,
+     *
+     * pour une grille 9x9 : 1..9
+     *
+     * pour une grille 16x16: 0..9-a..f
+     */
     public boolean isValid(final char value) {
-<span class="fc bfc" id="L46" title="All 2 branches covered.">        for (int i = 0; i &lt; POSSIBLE.length; i++) {</span>
-<span class="fc bfc" id="L47" title="All 2 branches covered.">            if (POSSIBLE[i] == value) {</span>
-<span class="fc" id="L48">                return  true;</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        for (int i = 0; i &lt; POSSIBLE.length; i++) {</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">            if (POSSIBLE[i] == value) {</span>
+<span class="fc" id="L72">                return  true;</span>
             }
         }
-<span class="fc" id="L51">        return false;</span>
+<span class="fc" id="L75">        return false;</span>
     }
 
+    /**
+     * @param x      position x dans la grille
+     * @param y      position y dans la grille
+     * @return       retourne vrai si les valeurs de x et y
+     *         sont correctes
+     */
     public boolean isPositionValid(final int x, final int y) {
 
-<span class="fc bfc" id="L56" title="All 4 branches covered.">        if (x &gt;= DIMENSION || y &gt;= DIMENSION) {</span>
-<span class="fc" id="L57">            return true;</span>
+<span class="fc bfc" id="L86" title="All 4 branches covered.">        if (x &gt;= DIMENSION || y &gt;= DIMENSION) {</span>
+<span class="fc" id="L87">            return true;</span>
         }
-<span class="fc" id="L59">        return false;</span>
+<span class="fc" id="L89">        return false;</span>
     }
-
-    public boolean isInColumnOrRow(final int x, final int y, final char value) { 
-<span class="fc" id="L63">        List&lt;Character&gt; column = new  ArrayList&lt;Character&gt;();</span>
-<span class="fc" id="L64">        List&lt;Character&gt; row = new  ArrayList&lt;Character&gt;();</span>
-<span class="fc bfc" id="L65" title="All 2 branches covered.">        for (int i = 0; i &lt; DIMENSION; i++) {</span>
-<span class="fc" id="L66">            column.add(valeurs_S[x][i]);</span>
-<span class="fc" id="L67">            row.add(valeurs_S[i][y]);</span>
+    /**
+     * Verifie si value existe sur la colonne x ou sur la ligne y.
+     * @param x      position x dans la grille
+     * @param y      position y dans la grille
+     * @return       retourne  vrai si value existe déjà sur la colonne x ou,
+     *         la ligne y
+     * @param value  valeur saisie
+     */
+    public boolean isInColumnOrRow(final int x, final int y, final char value) {
+<span class="fc" id="L100">        List&lt;Character&gt; column = new  ArrayList&lt;Character&gt;();</span>
+<span class="fc" id="L101">        List&lt;Character&gt; row = new  ArrayList&lt;Character&gt;();</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">        for (int i = 0; i &lt; DIMENSION; i++) {</span>
+<span class="fc" id="L103">            column.add(valeursS[x][i]);</span>
+<span class="fc" id="L104">            row.add(valeursS[i][y]);</span>
         }
-<span class="fc bfc" id="L69" title="All 4 branches covered.">        if (column.contains(value) || row.contains(value)) {</span>
-<span class="fc" id="L70">            return true;</span>
+<span class="fc bfc" id="L106" title="All 4 branches covered.">        if (column.contains(value) || row.contains(value)) {</span>
+<span class="fc" id="L107">            return true;</span>
         }
-<span class="fc" id="L72">        return false;</span>
+<span class="fc" id="L109">        return false;</span>
     }
+    /**
+     * Verifie si value n'existe pas déjà dans le sous correspondant,
+     * aux coordonnées saisies.
+     * @param x      position x dans la grille
+     * @param y      position y dans la grille
+     * @param value        valeur entrée dans la grille
+     * @return boolean
+     */
     private boolean isInSubgrid(final int x, final int y, final char value) {
-<span class="fc" id="L75">        int k = x - (x % SUBDIMENSION);</span>
-<span class="fc" id="L76">        int l = y - (y % SUBDIMENSION);</span>
-<span class="fc bfc" id="L77" title="All 2 branches covered.">        for (int i = k; i &lt; k  + SUBDIMENSION; i++) {</span>
-<span class="fc bfc" id="L78" title="All 2 branches covered.">            for (int j = l; j &lt; l + SUBDIMENSION; j++) {</span>
-<span class="fc bfc" id="L79" title="All 2 branches covered.">                if (valeurs_S[i][j] == value) {</span>
-<span class="fc" id="L80">                    return true;</span>
+<span class="fc" id="L120">        int k = x - (x % SUBDIMENSION);</span>
+<span class="fc" id="L121">        int l = y - (y % SUBDIMENSION);</span>
+<span class="fc bfc" id="L122" title="All 2 branches covered.">        for (int i = k; i &lt; k  + SUBDIMENSION; i++) {</span>
+<span class="fc bfc" id="L123" title="All 2 branches covered.">            for (int j = l; j &lt; l + SUBDIMENSION; j++) {</span>
+<span class="fc bfc" id="L124" title="All 2 branches covered.">                if (valeursS[i][j] == value) {</span>
+<span class="fc" id="L125">                    return true;</span>
                 }
             }
-        } 
-<span class="fc" id="L84">        return false;</span>
-    }
-
-    public char getValue(int x, int y) throws IllegalArgumentException {
-
-<span class="pc bpc" id="L89" title="1 of 2 branches missed.">        if (isPositionValid(x, y)) {</span>
-<span class="nc" id="L90">            new IllegalArgumentException(&quot;Invalid pos.&quot;);</span>
         }
-<span class="fc" id="L92">        return valeurs_S[x][y];</span>
+<span class="fc" id="L129">        return false;</span>
+    }
+    /**
+      * Recupere une valeur de la grille.
+      * @param x      position x dans la grille
+      * @param y      position y dans la grille
+      * @return valeur dans la case x,y
+      * @throw IllegalArgumentException si x ou y sont hors bornes (0-8)
+      */
+    public char getValue(final int x, final int y) throws IllegalArgumentException {
+
+<span class="pc bpc" id="L140" title="1 of 2 branches missed.">        if (isPositionValid(x, y)) {</span>
+<span class="nc" id="L141">            new IllegalArgumentException(&quot;Invalid pos.&quot;);</span>
+        }
+<span class="fc" id="L143">        return valeursS[x][y];</span>
     }
 
+    /**
+     * Test si une grille est terminee.
+     * @return true si la grille est complete
+     */
     public boolean complete() {
-<span class="pc bpc" id="L96" title="1 of 2 branches missed.">        for (int i = 0; i &lt; DIMENSION; i++) {</span>
-<span class="pc bpc" id="L97" title="1 of 2 branches missed.">            for (int j = 0; j &lt; DIMENSION; j++) {</span>
-<span class="fc bfc" id="L98" title="All 2 branches covered.">                if (valeurs_S[i][j] == 0) {</span>
-<span class="fc" id="L99">                    return false;</span>
+<span class="pc bpc" id="L151" title="1 of 2 branches missed.">        for (int i = 0; i &lt; DIMENSION; i++) {</span>
+<span class="pc bpc" id="L152" title="1 of 2 branches missed.">            for (int j = 0; j &lt; DIMENSION; j++) {</span>
+<span class="fc bfc" id="L153" title="All 2 branches covered.">                if (valeursS[i][j] == 0) {</span>
+<span class="fc" id="L154">                    return false;</span>
                 }
             }
         }
-<span class="nc" id="L103">        return true;</span>
+<span class="nc" id="L158">        return true;</span>
     }
-    public boolean possible(int x, int y, char value) throws IllegalArgumentException {
-<span class="pc bpc" id="L106" title="2 of 6 branches missed.">        if (isPositionValid(x, y) || isInColumnOrRow(x, y, value)  ||  isInSubgrid(x, y, value)) {</span>
-<span class="fc" id="L107">            throw new IllegalArgumentException(&quot;Unsupported val.&quot;);</span>
+    /**
+     * Test si une valeur est possible dans la grille par rapport a ce qu'elle
+     *               contient deja.
+     * @return boolean
+     * @param x     position x dans la grille
+     * @param y     position y dans la grille
+     * @param value
+     *            valeur a mettre dans la case
+     * @throw IllegalArgumentException si x ou y sont hors bornes (0-8)
+     * @throw IllegalArgumentException si value n'est pas un caractere autorise
+     *        ('1',...,'9',..),
+     */
+    public boolean possible(final int x, final int y, final char value) throws IllegalArgumentException {
+<span class="pc bpc" id="L173" title="2 of 6 branches missed.">        if (isPositionValid(x, y) || isInColumnOrRow(x, y, value)  ||  isInSubgrid(x, y, value)) {</span>
+<span class="fc" id="L174">            throw new IllegalArgumentException(&quot;Unsupported val.&quot;);</span>
         }
-<span class="fc" id="L109">        return true;</span>
+<span class="fc" id="L176">        return true;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
