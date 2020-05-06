@@ -27,20 +27,20 @@
 -version
 -windowtitle
 'sudoku 0.0.1-SNAPSHOT Test API'
-sudoku
-/home/sandra/eclipse-workspace/sudoku/target/classes = 1588687621000
-/home/sandra/eclipse-workspace/sudoku/target/test-classes = 1588687622219
+com.sandra.kisita.sudoku
+/home/sandra/eclipse-workspace/sudoku/target/classes = 1588787761000
+/home/sandra/eclipse-workspace/sudoku/target/test-classes = 1588787762317
 /home/sandra/.m2/repository/junit/junit-dep/4.8.2/junit-dep-4.8.2.jar = 1588447781431
 /home/sandra/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar = 1588447781567
-/home/sandra/eclipse-workspace/sudoku/src/test/java = 1588541974968
-/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/deprecated-list.html = 1588687646191
-/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/constant-values.html = 1588687645999
-/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/package-list = 1588687645823
-/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/index-all.html = 1588687646155
-/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/allclasses-frame.html = 1588687646207
-/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/script.js = 1588687646311
-/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/stylesheet.css = 1588687646311
-/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/allclasses-noframe.html = 1588687646223
-/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/overview-tree.html = 1588687646103
-/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/index.html = 1588687646239
-/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/help-doc.html = 1588687646271
+/home/sandra/eclipse-workspace/sudoku/src/test/java = 1588766238673
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/deprecated-list.html = 1588787788621
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/constant-values.html = 1588787788541
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/package-list = 1588787788421
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/index-all.html = 1588787788613
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/allclasses-frame.html = 1588787788625
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/script.js = 1588787788661
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/stylesheet.css = 1588787788661
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/allclasses-noframe.html = 1588787788629
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/overview-tree.html = 1588787788593
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/index.html = 1588787788641
+/home/sandra/eclipse-workspace/sudoku/target/site/testapidocs/help-doc.html = 1588787788645
