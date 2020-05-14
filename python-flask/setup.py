@@ -17,10 +17,10 @@ REQUIRES = ["connexion"]
 setup(
     name=NAME,
     version=VERSION,
-    description="Simple Inventory API for me",
+    description="Simple Inventory API for mekkkkk",
     author_email="hugues.kisitankebi@belfius.be",
     url="",
-    keywords=["Swagger", "Simple Inventory API for me"],
+    keywords=["Swagger", "Simple Inventory API for mekkkkk"],
     install_requires=REQUIRES,
     packages=find_packages(),
     package_data={'': ['swagger/swagger.yaml']},
